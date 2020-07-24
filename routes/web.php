@@ -13,10 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/', 'TaskController@index')->name('tasks.index');
+Route::post('/tasks/delete/{id}', 'TaskController@delete')->name('tasks.delete');
