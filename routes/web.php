@@ -28,3 +28,6 @@ Route::post('/tasks/delete/{id}', 'TaskController@delete')->name('tasks.delete')
 // Route::resource('post', 'PostController')->except([
 //   'create', 'store', 'edit', 'update', 'destroy'
 // ]);
+
+Route::get('/users', 'CsvController@csv')->name('csv.index');
+Route::post('/users', 'CsvController@postCsv')->name('csv.post');
