@@ -19,7 +19,7 @@
               <tr>
                 <th scope="row">{{ $item->id }}</th>
                 <td>{{ $item->name }}</td>
-                <td>{{ $item->todo}}</td>
+                <td>{{ $item->task}}</td>
                 <td>
                   <form action="/tasks/delete/{{ $item->id }}" method="post">
                     @csrf

@@ -11,8 +11,7 @@ class TaskController extends Controller
 {
     public function index()
     {
-        $tasks = User::join('tasks', 'users.id', '=', 'tasks.user_id')
-            ->get();
+        $tasks = User::join('tasks', 'users.id', '=', 'tasks.user_id')->where('deleted_at', Null)->get();
 
         return view("tasks.index", [
             "tasks" => $tasks,

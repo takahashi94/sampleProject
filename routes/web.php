@@ -20,3 +20,11 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/', 'TaskController@index')->name('tasks.index');
 Route::post('/tasks/delete/{id}', 'TaskController@delete')->name('tasks.delete');
+
+// Route::resource('post', 'PostController')->only([
+//   'index', 'show'
+// ]);
+
+// Route::resource('post', 'PostController')->except([
+//   'create', 'store', 'edit', 'update', 'destroy'
+// ]);
