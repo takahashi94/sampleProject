@@ -41,10 +41,11 @@ class CsvController extends Controller
         fclose($f);
 
         header("Content-Type: application/octet-stream");
-     header('Content-Length: '.filesize('test.csv'));
-     header('Content-Disposition: attachment; filename=test.csv');
-     readfile('test.csv');
+        header('Content-Length: '.filesize('test.csv'));
+        header('Content-Disposition: attachment; filename=test.csv');
+        header('Content-Transfer-Encoding: binary');
+        readfile('test.csv');
 
-     return view('user.index', compact('users'));
+        return view('user.index', compact('users'));
     }
 }

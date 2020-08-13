@@ -31,3 +31,6 @@ Route::post('/tasks/delete/{id}', 'TaskController@delete')->name('tasks.delete')
 
 Route::get('/users', 'CsvController@csv')->name('csv.index');
 Route::post('/users', 'CsvController@postCsv')->name('csv.post');
+
+Route::get('sample', 'SampleController@index')->name('sample.index');
+Route::get('sample/export', 'SampleController@export')->name('sample.export');
