@@ -36,17 +36,17 @@ class SampleController extends Controller
         // ファイル生成
         $stream = fopen('php://output', 'w');
         fwrite($stream, pack('C*', 0xEF, 0xBB, 0xBF)); // BOM をつける
-    
+
         // ヘッダー
         fputcsv($stream, ['id', 'name', 'title', 'content']);
-    
+
         //
         foreach ($lists as $list) {
             fputcsv($stream, $list);
         }
-    
+
         return response(stream_get_contents($stream), 200)
-                     ->header('Content-Type', 'text/csv')
-                     ->header('Content-Disposition', 'attachment; filename="demo.csv"');
+                    ->header('Content-Type', 'text/csv')
+                    ->header('Content-Disposition', 'attachment; filename="demo.csv"');
     }
 }
